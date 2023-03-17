@@ -1,0 +1,8 @@
+package com.test.employeemodule.service;
+
+import com.test.employeemodule.entity.Employee;
+
+public interface EmployeeService {
+
+	Employee createEmployee(Employee emp);
+}

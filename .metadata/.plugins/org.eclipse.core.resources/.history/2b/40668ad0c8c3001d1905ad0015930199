@@ -1,0 +1,56 @@
+package com.test.employeemodule.service;
+
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import com.test.employeemodule.entity.Employee;
+import com.test.employeemodule.entity.TaxDeductionVO;
+import com.test.employeemodule.repository.EmployeeRepository;
+
+@Service
+public class EmployeeServiceImpl implements EmployeeService {
+	
+	@Autowired
+	private EmployeeRepository employeeRepository;
+
+	@Override
+	public Employee createEmployee(Employee emp) {
+		
+		return employeeRepository.save(emp);
+		
+	}
+
+	@Override
+	public List<TaxDeductionVO> getSalaryWithTaxDeduction() {
+		
+		List<Employee> employeeList = employeeRepository.findAll();
+		No Tax for <=250000
+
+				5% Tax for >250000 and <=500000
+
+				10% Tax for >500000 and <=1000000
+
+				20% Tax for >1000000
+		if(salary<=250000)
+		{
+			tax=0;
+		}
+		elseif(salary>250000 && salary<=500000)
+		{
+			tax=12500;
+		}
+		elseif(salary>500000 && salary<=1000000)
+		{
+			tax=25000; 
+		}
+		elseif(salary>1000000)
+		{
+			tax=50000; 
+		}
+		
+		return null;
+	}
+
+}

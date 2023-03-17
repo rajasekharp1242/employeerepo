@@ -1,0 +1,11 @@
+package com.test.employeemodule.entity;
+
+public class TaxDeductionVO {
+  private Long empId;
+  private String firstName;
+  private String lastName;
+  private Long salary;
+  private Long taxAmount;
+  private Long cessAmount;
+  
+}

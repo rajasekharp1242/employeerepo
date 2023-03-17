@@ -1,0 +1,5 @@
+package com.test.employeemodule.service;
+
+public class EmployeeServiceImpl {
+
+}

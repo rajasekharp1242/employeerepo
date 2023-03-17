@@ -1,0 +1,31 @@
+package com.test.employeemodule.service;
+
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import com.test.employeemodule.entity.Employee;
+import com.test.employeemodule.entity.TaxDeductionVO;
+import com.test.employeemodule.repository.EmployeeRepository;
+
+@Service
+public class EmployeeServiceImpl implements EmployeeService {
+	
+	@Autowired
+	private EmployeeRepository employeeRepository;
+
+	@Override
+	public Employee createEmployee(Employee emp) {
+		
+		return employeeRepository.save(emp);
+		
+	}
+
+	@Override
+	public List<TaxDeductionVO> getSalaryWithTaxDeduction() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+}
