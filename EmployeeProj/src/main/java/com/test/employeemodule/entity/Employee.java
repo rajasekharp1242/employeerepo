@@ -1,6 +1,7 @@
 package com.test.employeemodule.entity;
 
 import java.sql.Timestamp;
+import java.util.List;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
@@ -10,6 +11,7 @@ import jakarta.persistence.Id;
 import jakarta.persistence.Table;
 import jakarta.validation.constraints.Email;
 import jakarta.validation.constraints.NotNull;
+import jakarta.validation.constraints.Pattern;
 
 @Entity
 @Table(name="Employee")
@@ -33,7 +35,8 @@ public class Employee {
 	
 	@Column
 	@NotNull
-	private Long phonenumber;
+	@Pattern(regexp = "(^[0-9]{10})")
+	private List<Long> phonenumber;
 	
 	@Column
 	@NotNull
@@ -75,11 +78,11 @@ public class Employee {
 		this.email = email;
 	}
 
-	public Long getPhonenumber() {
+	public List<Long> getPhonenumber() {
 		return phonenumber;
 	}
 
-	public void setPhonenumber(Long phonenumber) {
+	public void setPhonenumber(List<Long> phonenumber) {
 		this.phonenumber = phonenumber;
 	}
 
